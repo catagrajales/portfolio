@@ -15,19 +15,19 @@ export const Projects = async () => {
 				<CarouselContent>
 					<CarouselItem>
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-							{projects?.map((project) => (
+							{projects && projects.length ? projects.map((project) => (
 								<Card key={project.id}>
 									<CardContent>
 										<img
-											src="/placeholder.svg"
-											alt="Proyecto 1"
+											src={project.image}
+											alt={project.name}
 											className="rounded-t-lg w-full h-48 object-cover"
 											width="300"
 											height="200"
 											style={{ aspectRatio: "300/200", objectFit: "cover" }} />
 										<div className="p-4">
-											<h3 className="text-xl font-bold mb-2">Proyecto 1</h3>
-											<p className="text-[#333333]">Descripción del Proyecto 1</p>
+											<h3 className="text-xl font-bold mb-2">{project.name}</h3>
+											<p className="text-[#333333]">{project.short_description}</p>
 											<Link
 												href="#"
 												className="inline-flex items-center mt-4 text-[#008F8C] hover:underline"
@@ -38,7 +38,7 @@ export const Projects = async () => {
 										</div>
 									</CardContent>
 								</Card>
-							))}
+							)) : null}
 						</div>
 					</CarouselItem>
 					{/* <CarouselItem>
