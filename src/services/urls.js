@@ -14,4 +14,7 @@ export const apiUrls = {
   certificates: {
     'all': `${BASE_URL}api/certificates`
   },
+  learning: {
+    'all': `${BASE_URL}api/learning`
+  }
 }
