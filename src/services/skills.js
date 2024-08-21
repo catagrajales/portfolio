@@ -1,9 +1,7 @@
-import { chunkArray } from "@/lib/utils";
 import { apiUrls } from "./urls";
-export const getProjects = async (id = null) => {
+export const getSkills = async (id = null) => {
   try {
-		const apiUrl = id ? apiUrls.projects.projects(id) : apiUrls.projects.all
-		const response = await fetch(apiUrl);
+		const response = await fetch(apiUrls.skills.all);
 		if (!response.ok) {
 			throw new Error('Error fetching data');
 		}
@@ -12,7 +10,7 @@ export const getProjects = async (id = null) => {
 		if(!data.success) {
 			throw new Error('Error fetching data');
 		}
-		return chunkArray(data.data, 3);
+		return data.data
   } catch (error) {
     console.log(error)
   }
