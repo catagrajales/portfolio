@@ -25,7 +25,7 @@ export async function POST(req, res) {
             Name: 'Catalina Grajales'
           },
         ],
-        Subject: 'New Contact Form Submission',
+        Subject: `${name} wants to contact you.`,
         TextPart: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
         HTMLPart: `<p><strong>Name:</strong> ${name}</p>
                     <p><strong>Email:</strong> ${email}</p>
