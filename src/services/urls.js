@@ -16,5 +16,8 @@ export const apiUrls = {
   },
   learning: {
     'all': `${BASE_URL}api/learning`
+  },
+  mailer: {
+    'send': `${BASE_URL}api/mailer`
   }
 }

@@ -1,48 +1,56 @@
+import { Client } from 'node-mailjet';
 import { NextResponse } from'next/server';
-import nodemailer from 'nodemailer';
 
-///-- https://app.mailjet.com/account
+const MAILJET_EMAIL = process.env.MAILJET_EMAIL;
+
+const mailjet = new Client({
+  apiKey: process.env.MAILJET_API_KEY,
+  apiSecret: process.env.MAILJET_SECRET_KEY
+});
 
 export async function POST(req, res) {
-  try {
-    const { name, email, message } = req.body;
+  const body = await req.json();
+  const { name, email, message } = body;
 
-    // Configura el transportador de Nodemailer
-    let transporter = nodemailer.createTransport({
-      host: "smtp.example.com", // Cambia esto por el host SMTP de tu proveedor
-      port: 587, // Generalmente 587 para TLS o 465 para SSL
-      secure: false, // true para 465, false para otros puertos
-      auth: {
-        user: process.env.EMAIL_USER, // Tu usuario de correo
-        pass: process.env.EMAIL_PASS, // Tu contraseña de correo
+  const data = {
+    Messages: [
+      {
+        From: {
+          Email: MAILJET_EMAIL,
+          Name: 'Catalina Grajales'
+        },
+        To: [
+          {
+            Email: MAILJET_EMAIL,
+            Name: 'Catalina Grajales'
+          },
+        ],
+        Subject: 'New Contact Form Submission',
+        TextPart: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+        HTMLPart: `<p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Message:</strong> ${message}</p>`,
       },
-    });
+    ],
+  };
 
-    try {
-      // Configura el contenido del correo electrónico
-      await transporter.sendMail({
-        from: '"Portfolio Contact" <your-email@example.com>', // El remitente del correo
-        to: "recipient@example.com", // El destinatario
-        subject: "New Contact Form Submission", // El asunto del correo
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`, // El cuerpo del correo en texto plano
-        html: `<p><strong>Name:</strong> ${name}</p>
-               <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Message:</strong> ${message}</p>`, // El cuerpo del correo en HTML
-      });
+  
+  try {
+    const result = await mailjet
+            .post('send', { version: 'v3.1' })
+            .request(data);
+  
+    const { Status } = result.body.Messages[0];
 
-      res.status(200).json({ success: true });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ success: false, message: 'Internal Server Error' });
-    }
-    // return NextResponse.json(
-    //   { success: true, data: transformedData },
-    //   { status: 200 }
-    // );
-  } catch (error) {
     return NextResponse.json(
-      { success: false },
-      { status: 400 }
+      { success: true, data: Status },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { success: false, message: 'Internal Server Error' },
+      { status: 500 }
     );
   }
 }
