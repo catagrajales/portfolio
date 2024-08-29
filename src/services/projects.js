@@ -12,7 +12,7 @@ export const getProjects = async (id = null) => {
 		if(!data.success) {
 			throw new Error('Error fetching data');
 		}
-		return chunkArray(data.data, 3);
+		return id ? data.data : chunkArray(data.data, 3);
   } catch (error) {
     console.log(error)
   }

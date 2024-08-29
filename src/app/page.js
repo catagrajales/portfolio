@@ -1,11 +1,9 @@
-import { Header, Nav, Projects, Learning, Skills, References, Education, Contact, Footer } from "@/components/home"
+import { Projects, Learning, Skills, References, Education, Contact } from "@/components/home"
 
 export default function Home() {
   return (
-    <div className="bg-white text-[#023535]">
-      <Header />
       <main className="container mx-auto max-w-5xl py-12 px-4 md:px-6">
-        <Nav />
+        {/* <Nav /> */}
         <section>
           <h2 className="text-2xl font-bold mb-4">About me</h2>
           <p className="text-[#333333]">
@@ -19,9 +17,6 @@ export default function Home() {
         <Education />
         <Contact />
         <Learning />
-        
       </main>
-      <Footer />
-    </div>
   );
 }
