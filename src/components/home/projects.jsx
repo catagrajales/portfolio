@@ -31,7 +31,7 @@ export const Projects = async () => {
 													<h3 className="text-xl font-bold mb-2">{project.name}</h3>
 													<p className="text-[#333333]">{project.short_description}</p>
 													<Link
-														href="#"
+														href={`/project/${project.id}`}
 														className="inline-flex items-center mt-4 text-[#008F8C] hover:underline"
 														prefetch={false}>
 														Open details
