@@ -3,7 +3,6 @@ import { Projects, Learning, Skills, References, Education, Contact } from "@/co
 export default function Home() {
   return (
       <main className="container mx-auto max-w-5xl py-12 px-4 md:px-6">
-        {/* <Nav /> */}
         <section>
           <h2 className="text-2xl font-bold mb-4">About me</h2>
           <p className="text-[#333333]">
