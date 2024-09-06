@@ -33,5 +33,47 @@ export const certificates = [
 		organization: 'Platzi',
 		date: '07-01-2024',
 		description: 'Develop a project in Next.js with dynamic routing, multiple data fetching methods, and AI chatbot integration. Optimize site performance and SEO, ensuring an excellent experience for your clients.'
-	}
+	},
+	{
+		id: 6,
+		title: 'Backend Course with Node.js: REST API with Express.js',
+		organization: 'Platzi',
+		date: '06-01-2022',
+		description: 'Learn Backend Development with Node.js! Work with routes, servers, and middlewares using Express.js. Build an API, handle errors, and perform data validation. Deploy your application to production on Heroku.'
+	},
+	{
+		id: 7,
+		title: 'Backend Development with Node.js: Authentication with Passport.js and JWT',
+		organization: 'Platzi',
+		date: '06-01-2022',
+		description: 'Learn Authentication and Authorization Strategies with Node.js! Integrate Passport.js for API REST login. Secure passwords with hashing tools. Implement JSON Web Tokens to manage sessions between backend and frontend.'
+	},
+	{
+		id: 8,
+		title: 'Backend Development with Node.js: Database Management with PostgreSQL',
+		organization: 'Platzi',
+		date: '06-01-2022',
+		description: 'Learn Data Persistence in Node.js with PostgreSQL! Connect your REST API with relational databases. Master Sequelize, the most popular ORM in JavaScript. Handle queries, relationships, and migrations in your application.'
+	},
+	{
+		id: 9,
+		title: 'Tailwind CSS Course',
+		organization: 'Platzi',
+		date: '01-01-2022',
+		description: 'Use Tailwind CSS to build websites or web applications following best practices for Responsive Design, Mobile First, and Utility First. Additionally, with the help of Sizzy, learn how your design performs across various devices.'
+	},
+	{
+		id: 10,
+		title: 'Advanced Laravel Course.',
+		organization: 'Platzi',
+		date: '09-01-2021',
+		description: 'Dive deeper into Laravel, one of the most powerful PHP frameworks, in this advanced course. Learn to build complex applications with advanced features like custom middleware, event handling, and service providers. Master advanced techniques for database management, including Eloquent ORM relationships, migrations, and query optimization. Explore real-time broadcasting with Laravel Echo, advanced authentication strategies, and the integration of third-party services. Additionally, enhance your understanding of testing, security best practices, and performance optimization to build scalable and secure applications. Perfect for developers looking to elevate their skills and leverage Laravel to its full potential.'
+	},
+	{
+		id: 11,
+		title: 'Professional Git and GitHub Course.',
+		organization: 'Platzi',
+		date: '08-01-2021',
+		description: 'Stop versioning your projects using your own version control system. Instead, use Git, the industry-standard version control system. Learn to work with Git, understand basic concepts, clone a repository, and manage your projects by hosting them in your local repository and on GitHub.'
+	},
 ]

@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const BASE_URL = process.env.BASE_URL;
 
 export const apiUrls = {
   projects: {
@@ -18,6 +18,6 @@ export const apiUrls = {
     'all': `${BASE_URL}api/learning`
   },
   mailer: {
-    'send': `${BASE_URL}api/mailer`
+    'send': `api/mailer`
   }
 }
