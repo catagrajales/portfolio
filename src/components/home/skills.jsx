@@ -10,7 +10,7 @@ export const Skills = async () => {
 			<h2 className="text-2xl font-bold mb-4">Skills</h2>
 			<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
 				{skills && skills.length ? skills.map((skill, key) => (
-					<div key={key} className="bg-[#D8FFDB] rounded-lg p-4 text-center">
+					<div key={key} className="bg-[#D8FFDB] rounded-lg p-2 sm:p-4 text-center">
 						<CodeIcon className="w-8 h-8 mb-2 text-[#008F8C]" />
 						<p className="text-[#333333]">{skill}</p>
 					</div>

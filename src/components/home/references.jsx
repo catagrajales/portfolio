@@ -14,13 +14,13 @@ export const References = async () => {
 					{
 						referencesChunks && referencesChunks.length ? referencesChunks.map((chunk, key) => (
 							<CarouselItem key={key}>
-								<div className="grid grid-cols-2 gap-4">
+								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 									{chunk && chunk.length ? chunk.map((reference, key) => (
 										<Card key={key}>
 											<CardContent>
 												<div className="flex items-center mb-4">
 													<Avatar>
-														<AvatarImage src="/placeholder-user.jpg" />
+														<AvatarImage src="/placeholder-user.png" />
 														<AvatarFallback>{reference.name}</AvatarFallback>
 													</Avatar>
 													<div className="ml-4">

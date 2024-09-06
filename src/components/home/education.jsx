@@ -13,7 +13,7 @@ export const Education = async () => {
 				<CarouselContent>
 					{certificatesChunks && certificatesChunks.length ? certificatesChunks.map((chunk, key) => (
 						<CarouselItem key={key}>
-							<div className="grid grid-cols-2 gap-4">
+							<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 								{ chunk && chunk.length ? chunk.map((certificate) => (
 									<Card key={certificate.id}>
 										<CardContent>
